@@ -1,0 +1,6 @@
+/target/
+/Pass_Screenshot/
+/Failed_Screenshot/
+/test-output/Execution reports/
+/test-output/*.png
+/LogFiles
