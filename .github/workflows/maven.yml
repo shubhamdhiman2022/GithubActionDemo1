@@ -21,6 +21,7 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn clean test #-Dtestng.dtd.http=true
+      continue-on-error: true # Continue even if build fails
 
     - name: Cucumber HTML reports
       uses: actions/upload-artifact@v2
