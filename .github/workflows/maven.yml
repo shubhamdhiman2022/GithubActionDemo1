@@ -27,23 +27,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: cucumber-reports
-        path: ./test-output/Execution-reports/ExtentHtml.html # Specify the directory where your HTML reports are generated 
-        
-    - name: Copy Reports to Deployment Directory
-      run: |
-        mkdir -p deployment/reports  # Create a directory to hold reports in deployment
-        cp -r ./test-output/Execution-reports/ExtentHtml.html deployment/reports/
-
-    - name: Commit and Push to GitHub Pages
-      run: |
-        cd deployment
-        git init
-        git add .
-        git commit -m "Deploy reports to GitHub Pages"
-        git push --force "https://${{ secrets.GITHUB_TOKEN }}@github.com/shubhamdhiman2022/GithubActionDemo1.git" HEAD:gh-pages     
-
-#    - name: Deploy report page to GitHub Page
-#      uses: peaceiris/actions-gh-pages@v3
-#      with: 
-#        github_token: ${{ secrets.GITHUB_TOKEN }}
-#        publish_dir: /test-output/Execution-reports/ExtentSpark.html
+        path: ./test-output/* # Specify the directory where your HTML reports are generated 
