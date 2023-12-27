@@ -8,6 +8,6 @@ Feature: Google naviagte
    Then Verify user logged in successfully
    
    
- #@fast
-  #Scenario: Failed Scenario
-  #Then verify failure 
+ @fast
+  Scenario: Failed Scenario
+  Then verify failure 
